@@ -1,32 +1,95 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div>
+    <header class="fixed-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6">
+                <h3 class="logo">
+                  <router-link to="/"><i class="far fa-images"></i> Lorem Picsum</router-link>
+                </h3>
+              </div>
+              <div class="col-lg-6 top-nav">
+                <nav>
+                  <ul class="nav nav-pills float-right">
+                    <li class="nav-item">
+                      <router-link class="nav-link" to="/">Dashboard</router-link>
+                    </li>
+                    <li class="nav-item">
+                      <router-link class="nav-link" to="/gallery">Gallery</router-link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <router-view />
+    </main>
+    <footer class="fixed-bottom">
+      <div class="container">
+        <p class="text-center">
+          Developed with &hearts; on Vue.js |
+          <a
+            href="https://github.com/nagarjuna-immadi/vue-image-gallery"
+            target="_blank"
+            >Github Repo</a
+          >
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+header {
+  background: #fff;
 }
 
-#nav {
-  padding: 30px;
+header .container {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+header h3 a,
+header h3 a:hover {
+  color: #e47676;
+  text-decoration: none;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+main.container {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+footer {
+  background: #fff;
+}
+
+footer .container {
+  padding-top: 15px;
+  color: #e47676;
+  border-top: 1px solid #e5e5e5;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-right .btn {
+  margin-left: 10px;
+}
+
+.top-nav .nav-item {
+  margin-left: 10px;
+}
+
+.router-link-exact-active, .logo {
+  font-weight: bold;
 }
 </style>
