@@ -33,14 +33,13 @@
     <footer class="fixed-bottom">
       <div class="container">
         <p class="text-center">
-          Developed with <span class="tomato">&hearts;</span> on <a
-            href="https://vuejs.org/"
+          Developed with <span class="tomato">&hearts;</span> on 
+          <a href="https://vuejs.org/"
             target="_blank">Vue.js</a> |
-          <a
-            href="https://github.com/nagarjuna-immadi/picsum-vue-app"
-            target="_blank"
-            >Github Repo</a
-          >
+          <a href="https://github.com/nagarjuna-immadi/picsum-vue-app"
+            target="_blank">Github Repo</a> | 
+          <a href="https://nagarjuna-immadi.github.io/picsum-vue-app/"
+            target="_blank">View Production App</a> 
         </p>
       </div>
     </footer>
