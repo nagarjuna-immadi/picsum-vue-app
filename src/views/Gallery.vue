@@ -70,17 +70,16 @@ export default {
         .getImages(this.currentPage, this.perPage)
         .then((response) => {
           this.images = response.data;
-          let vm = this;
-          this.updateNavUrls(vm, response.headers);
+          this.updateNavUrls(response.headers);
         })
         .catch(() => {
           this.showError();
         });
     },
-    updateNavUrls(vm, headers) {
+    updateNavUrls(headers) {
       let navUrls = this.getNavUrls(headers.link);
-      vm.nextUrl = navUrls.next ? navUrls.next : "";
-      vm.prevUrl = navUrls.prev ? navUrls.prev : "";
+      this.nextUrl = navUrls.next ? navUrls.next : "";
+      this.prevUrl = navUrls.prev ? navUrls.prev : "";
     },
     getNavUrls(link) {
       let linkSegments = link.split(",");
@@ -111,14 +110,12 @@ export default {
         this.currentPage--;
       }
 
-      let vm = this;
       picSum
         .getImagesByUrl(url)
         .then((response) => {
           this.images = response.data;
-          this.updateNavUrls(vm, response.headers);
-        })
-        .catch(() => {
+          this.updateNavUrls(response.headers);
+        }).catch(() => {
           this.showError();
         });
     },
