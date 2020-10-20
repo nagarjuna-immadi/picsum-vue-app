@@ -35,7 +35,7 @@
         <p class="text-center">
           Developed with &hearts; on Vue.js |
           <a
-            href="https://github.com/nagarjuna-immadi/vue-image-gallery"
+            href="https://github.com/nagarjuna-immadi/picsum-vue-app"
             target="_blank"
             >Github Repo</a
           >
