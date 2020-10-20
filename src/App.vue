@@ -33,7 +33,9 @@
     <footer class="fixed-bottom">
       <div class="container">
         <p class="text-center">
-          Developed with &hearts; on Vue.js |
+          Developed with <span class="tomato">&hearts;</span> on <a
+            href="https://vuejs.org/"
+            target="_blank">Vue.js</a> |
           <a
             href="https://github.com/nagarjuna-immadi/picsum-vue-app"
             target="_blank"
@@ -73,7 +75,6 @@ footer {
 
 footer .container {
   padding-top: 15px;
-  color: #e47676;
   border-top: 1px solid #e5e5e5;
 }
 

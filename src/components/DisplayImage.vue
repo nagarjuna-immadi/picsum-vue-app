@@ -1,13 +1,15 @@
 <template>
-  <div class="card mb-3 image-card">
+  <div class="card mb-4 image-card">
     <img
       :src="picSumUrl + '/id/' + imageData.id + '/300/200'"
       class="card-img-top"
     />
-    <div class="card-body">
+    <div class="card-body p-3">
       <div>
         <a target="_blank" :href="imageData.url">{{ imageData.author }}</a>
-        <a target="_blank" :href="imageData.download_url" class="pull-right"><i class="fas fa-cloud-download-alt"></i></a>
+        <a target="_blank" :href="imageData.download_url" class="float-right">
+          <i class="fas fa-cloud-download-alt"></i>
+        </a>
       </div>
     </div>
   </div>
