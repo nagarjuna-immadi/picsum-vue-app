@@ -127,6 +127,10 @@ export default {
     },
   },
   created: function() {
+    console.log(process.env.BASE_URL);
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.VUE_APP_BASE_URL);
+    console.log(process.env.VUE_APP_TITLE);
     this.getImages();
   },
   computed: {
