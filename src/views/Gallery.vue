@@ -13,7 +13,7 @@
               {{ value }}
             </option>
           </select>
-          <span> images per page</span> 
+          <span> images per page</span>
         </div>
       </div>
       <div class="col-6 text-right">
@@ -61,21 +61,26 @@ export default {
       perPage: 12,
       prevUrl: "",
       nextUrl: "",
-      currentPage: 1
+      currentPage: 1,
     };
   },
   methods: {
     getImages() {
-      picSum.getImages(this.currentPage, this.perPage).then((response) => {
-        this.images = response.data;
-        let vm = this;
-        this.updateNavUrls(vm, response.headers);
-      });
+      picSum
+        .getImages(this.currentPage, this.perPage)
+        .then((response) => {
+          this.images = response.data;
+          let vm = this;
+          this.updateNavUrls(vm, response.headers);
+        })
+        .catch(() => {
+          this.showError();
+        });
     },
     updateNavUrls(vm, headers) {
       let navUrls = this.getNavUrls(headers.link);
-      vm.nextUrl = navUrls.next ? navUrls.next : '';
-      vm.prevUrl = navUrls.prev ? navUrls.prev : '';
+      vm.nextUrl = navUrls.next ? navUrls.next : "";
+      vm.prevUrl = navUrls.prev ? navUrls.prev : "";
     },
     getNavUrls(link) {
       let linkSegments = link.split(",");
@@ -100,17 +105,25 @@ export default {
         return;
       }
 
-      if(type == 'next') {
+      if (type == "next") {
         this.currentPage++;
-      } else if(type == 'prev') {
+      } else if (type == "prev") {
         this.currentPage--;
       }
 
       let vm = this;
-      picSum.getImagesByUrl(url).then((response) => {
-        this.images = response.data;
-        this.updateNavUrls(vm, response.headers);
-      });
+      picSum
+        .getImagesByUrl(url)
+        .then((response) => {
+          this.images = response.data;
+          this.updateNavUrls(vm, response.headers);
+        })
+        .catch(() => {
+          this.showError();
+        });
+    },
+    showError() {
+      alert("Something gone wrong! Please try after sometime.");
     },
   },
   created: function() {

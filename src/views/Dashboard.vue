@@ -2,7 +2,7 @@
   <div class="dashboard">
     <button type="button" v-on:click="updateRandomPic" class="btn btn-outline-primary btn-lg btn-block"><i class="fas fa-random"></i> Load Another Pic</button>
     <br />
-    <img v-bind:src="getRandomPic" />
+    <img v-bind:src="getRandomPic" class="random-pic" />
   </div>
 </template>
 
@@ -26,3 +26,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.random-pic {
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #000000;
+}
+</style>
